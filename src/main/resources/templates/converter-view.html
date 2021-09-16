@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+
+<!--    대전제: 뷰템플릿은 데이터를 문자로 출력한다. -->
+
+    <!--    괄호가 2개 인것만 컨버터가 적용된다.-->
+    <li>${number}: <span th:text="${number}" ></span></li>
+<!--    타임리프틑 text로 출력해야한다. 그래서 number를 문자로 바꿔야한다.-->
+<!--    그래서 IntegerToStringConveter가 호출됐다. -->
+    <li>${{number}}: <span th:text="${{number}}" ></span></li>
+
+<!--    그냥 객체가 출력된다. 그래서 toString호출하게된다.-->
+    <li>${ipPort}: <span th:text="${ipPort}" ></span></li>
+
+    <!-- IpPortToStringConverter가 호출된다.-->
+    <li>${{ipPort}}: <span th:text="${{ipPort}}" ></span></li>
+</ul>
+</body>
+</html>
